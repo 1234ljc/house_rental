@@ -1,0 +1,5 @@
+# 文件上传配置
+upload:
+  save-path: F:/upload/
+  base-url: http://localhost:8080/upload/
+  mapping: /upload/**

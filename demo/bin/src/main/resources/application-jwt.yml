@@ -1,0 +1,4 @@
+# JWT 配置
+jwt:
+  secret: houseRentalAdminSecretKey2025HouseRentalSystemAdmin
+  expiration: 7200000

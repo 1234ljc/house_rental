@@ -1,0 +1,224 @@
+2026-05-18 00:00:38.766 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 00:00:38.766 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 00:00:38.809 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 00:00:38.809 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 00:00:38.809 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 00:00:38.809 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 00:01:38.757 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 00:01:38.757 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 00:01:38.757 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 00:01:38.757 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 00:01:38.757 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 00:01:38.757 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 00:02:38.764 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 00:02:38.764 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 00:02:38.764 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 00:02:38.764 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 00:02:38.765 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 00:02:38.765 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 00:03:38.772 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 00:03:38.772 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 00:03:38.772 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 00:03:38.774 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 00:03:38.774 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 00:03:38.774 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 01:00:00.066 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==>  Preparing: SELECT contract_id,house_id,landlord_id,tenant_id,contract_no,content,rent_start_date,rent_end_date,monthly_rent,deposit_amount,payment_day,status,renewal_status,parent_contract_id,tenant_sign_time,landlord_sign_time,create_time,update_time FROM rental_contract WHERE (status = ? AND rent_end_date < ?)
+2026-05-18 01:00:00.066 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==> Parameters: 2(Integer), 2026-05-18(LocalDate)
+2026-05-18 01:00:00.072 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - <==      Total: 0
+2026-05-18 02:00:00.007 [MessageBroker-1] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==>  Preparing: SELECT contract_id,house_id,landlord_id,tenant_id,contract_no,content,rent_start_date,rent_end_date,monthly_rent,deposit_amount,payment_day,status,renewal_status,parent_contract_id,tenant_sign_time,landlord_sign_time,create_time,update_time FROM rental_contract WHERE (status = ? AND rent_end_date >= ?)
+2026-05-18 02:00:00.007 [MessageBroker-1] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==> Parameters: 2(Integer), 2026-05-18(LocalDate)
+2026-05-18 02:00:00.031 [MessageBroker-1] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - <==      Total: 16
+2026-05-18 09:06:16.859 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h46m23s88ms458µs).
+2026-05-18 09:09:11.622 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:09:11.622 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:09:11.622 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:09:11.622 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:09:11.622 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:09:11.622 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:09:12.580 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:09:12.580 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:09:12.581 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:09:12.581 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:09:12.581 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:09:12.581 [http-nio-8080-exec-7] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:09:12.604 [http-nio-8080-exec-4] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - ==>  Preparing: SELECT house_id as houseId, title, address, city, rent_price as rentPrice, area, house_type as houseType, images, view_count as viewCount, collect_count as collectCount FROM house WHERE status = 1 AND city LIKE CONCAT('%',?,'%') ORDER BY view_count DESC, collect_count DESC LIMIT ?
+2026-05-18 09:09:12.604 [http-nio-8080-exec-6] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - ==>  Preparing: SELECT house_id as houseId, title, address, city, rent_price as rentPrice, area, house_type as houseType, images, view_count as viewCount, collect_count as collectCount FROM house WHERE status = 1 AND city LIKE CONCAT('%',?,'%') ORDER BY rent_price ASC LIMIT ?
+2026-05-18 09:09:12.604 [http-nio-8080-exec-6] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - ==> Parameters: 无锡(String), 8(Integer)
+2026-05-18 09:09:12.604 [http-nio-8080-exec-4] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - ==> Parameters: 无锡(String), 8(Integer)
+2026-05-18 09:09:12.613 [http-nio-8080-exec-4] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - <==      Total: 8
+2026-05-18 09:09:12.621 [http-nio-8080-exec-6] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - <==      Total: 8
+2026-05-18 09:09:42.634 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:09:42.634 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:09:42.634 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:10:12.630 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:10:12.630 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:10:12.630 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:10:12.630 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:10:12.630 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:10:12.630 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:10:42.627 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:10:42.627 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:10:42.628 [http-nio-8080-exec-8] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:11:12.630 [http-nio-8080-exec-5] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:11:12.630 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:11:12.630 [http-nio-8080-exec-5] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:11:12.630 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:11:12.631 [http-nio-8080-exec-4] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:11:12.631 [http-nio-8080-exec-5] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:11:42.638 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:11:42.639 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:11:42.640 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:12:12.636 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:12:12.636 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:12:12.637 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:12:12.637 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:12:12.637 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:12:12.637 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:12:42.633 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:12:42.633 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:12:42.634 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:13:12.624 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:13:12.625 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:13:12.625 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:13:35.626 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:13:35.626 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:13:35.627 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:14:12.633 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:14:12.633 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:14:12.633 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:14:35.633 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:14:35.633 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:14:35.633 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:15:12.622 [http-nio-8080-exec-3] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:15:12.623 [http-nio-8080-exec-3] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:15:12.623 [http-nio-8080-exec-3] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:15:35.631 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:15:35.631 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:15:35.631 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:16:35.629 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:16:35.629 [http-nio-8080-exec-9] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:16:35.629 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:16:35.629 [http-nio-8080-exec-9] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:16:35.630 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:16:35.630 [http-nio-8080-exec-9] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:17:35.636 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 09:17:35.636 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 09:17:35.636 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: null
+2026-05-18 09:17:35.636 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), null, 1(Integer), null
+2026-05-18 09:17:35.636 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 09:17:35.636 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 09:18:30.129 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==>  Preparing: SELECT contract_id,house_id,landlord_id,tenant_id,contract_no,content,rent_start_date,rent_end_date,monthly_rent,deposit_amount,payment_day,status,renewal_status,parent_contract_id,tenant_sign_time,landlord_sign_time,create_time,update_time FROM rental_contract WHERE (status = ? AND rent_end_date = ?)
+2026-05-18 09:18:30.129 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - ==> Parameters: 2(Integer), 2026-05-25(LocalDate)
+2026-05-18 09:18:30.130 [MessageBroker-2] DEBUG c.e.d.r.rental.RentalContractMapper.selectList - <==      Total: 0
+2026-05-18 09:18:30.677 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-18 09:18:30.682 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-18 20:05:56.225 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.13 with PID 7292 (G:\house_rental\demo\target\classes started by lenovo in G:\house_rental\demo)
+2026-05-18 20:05:56.226 [main] DEBUG com.example.demo.DemoApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+2026-05-18 20:05:56.227 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-18 20:05:57.785 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-18 20:05:57.786 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-18 20:05:57.786 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-18 20:05:57.849 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-18 20:05:59.318 [main] INFO  com.example.demo.config.MvcConfig - 注册资源映射: /uploads/ -> file:///uploads
+2026-05-18 20:05:59.567 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-18 20:05:59.593 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 3.956 seconds (process running for 5.411)
+2026-05-18 20:06:35.787 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-18 20:06:36.024 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-18 20:06:36.185 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b82eeb3
+2026-05-18 20:06:36.186 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-18 20:06:36.192 [http-nio-8080-exec-2] DEBUG c.e.demo.repository.user.UserMapper.selectList - ==>  Preparing: SELECT user_id,username,password,phone,email,real_name,id_card,avatar,user_type,realname_status,realname_time,realname_audit_reason,status,beans,credit_score,create_time,update_time FROM `user` WHERE (username = ? AND user_type = ?)
+2026-05-18 20:06:36.216 [http-nio-8080-exec-2] DEBUG c.e.demo.repository.user.UserMapper.selectList - ==> Parameters: zkTest(String), 1(Integer)
+2026-05-18 20:06:36.281 [http-nio-8080-exec-2] DEBUG c.e.demo.repository.user.UserMapper.selectList - <==      Total: 1
+2026-05-18 20:06:36.751 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.user.UserMapper.selectList - ==>  Preparing: SELECT user_id,username,password,phone,email,real_name,id_card,avatar,user_type,realname_status,realname_time,realname_audit_reason,status,beans,credit_score,create_time,update_time FROM `user` WHERE (username = ? AND user_type = ?)
+2026-05-18 20:06:36.752 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.user.UserMapper.selectList - ==> Parameters: zkTest(String), 1(Integer)
+2026-05-18 20:06:36.754 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.user.UserMapper.selectList - <==      Total: 1
+2026-05-18 20:06:37.870 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:06:37.870 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:06:37.870 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:06:37.870 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:06:37.873 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:06:37.874 [http-nio-8080-exec-2] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:06:37.875 [http-nio-8080-exec-10] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - ==>  Preparing: SELECT house_id as houseId, title, address, city, rent_price as rentPrice, area, house_type as houseType, images, view_count as viewCount, collect_count as collectCount FROM house WHERE status = 1 AND city LIKE CONCAT('%',?,'%') ORDER BY rent_price ASC LIMIT ?
+2026-05-18 20:06:37.875 [http-nio-8080-exec-9] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - ==>  Preparing: SELECT house_id as houseId, title, address, city, rent_price as rentPrice, area, house_type as houseType, images, view_count as viewCount, collect_count as collectCount FROM house WHERE status = 1 AND city LIKE CONCAT('%',?,'%') ORDER BY view_count DESC, collect_count DESC LIMIT ?
+2026-05-18 20:06:37.876 [http-nio-8080-exec-10] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - ==> Parameters: 无锡(String), 8(Integer)
+2026-05-18 20:06:37.876 [http-nio-8080-exec-9] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - ==> Parameters: 无锡(String), 8(Integer)
+2026-05-18 20:06:37.885 [http-nio-8080-exec-9] DEBUG c.e.d.repository.house.HouseMapper.selectHotHouses - <==      Total: 8
+2026-05-18 20:06:37.905 [http-nio-8080-exec-10] DEBUG c.e.d.r.house.HouseMapper.selectCheapHouses - <==      Total: 8
+2026-05-18 20:06:39.721 [http-nio-8080-exec-3] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM house WHERE (status = ? AND city LIKE ?)
+2026-05-18 20:06:39.721 [http-nio-8080-exec-3] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - ==> Parameters: 1(Integer), %无锡%(String)
+2026-05-18 20:06:39.723 [http-nio-8080-exec-3] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - <==      Total: 1
+2026-05-18 20:06:39.727 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.house.HouseMapper.selectList - ==>  Preparing: SELECT house_id,landlord_id,title,description,address,province,city,district,longitude,latitude,rent_price,deposit_type,area,house_type,floor,orientation,facilities,images,rent_option,status,audit_reason,view_count,collect_count,property_license_front,property_license_back,property_license_other,create_time,update_time FROM house WHERE (status = ? AND city LIKE ?) ORDER BY view_count DESC,create_time DESC LIMIT ?
+2026-05-18 20:06:39.728 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.house.HouseMapper.selectList - ==> Parameters: 1(Integer), %无锡%(String), 12(Long)
+2026-05-18 20:06:39.735 [http-nio-8080-exec-3] DEBUG c.e.demo.repository.house.HouseMapper.selectList - <==      Total: 12
+2026-05-18 20:06:41.704 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.selectById - ==>  Preparing: SELECT house_id,landlord_id,title,description,address,province,city,district,longitude,latitude,rent_price,deposit_type,area,house_type,floor,orientation,facilities,images,rent_option,status,audit_reason,view_count,collect_count,property_license_front,property_license_back,property_license_other,create_time,update_time FROM house WHERE house_id=?
+2026-05-18 20:06:41.704 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.selectById - ==> Parameters: 391(Long)
+2026-05-18 20:06:41.705 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.selectById - <==      Total: 1
+2026-05-18 20:06:41.715 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.updateById - ==>  Preparing: UPDATE house SET landlord_id=?, title=?, description=?, address=?, province=?, city=?, district=?, rent_price=?, deposit_type=?, area=?, house_type=?, floor=?, orientation=?, facilities=?, images=?, rent_option=?, status=?, view_count=?, collect_count=?, create_time=?, update_time=? WHERE house_id=?
+2026-05-18 20:06:41.716 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.updateById - ==> Parameters: 72(Long), 无锡滨湖区蠡湖(String), 蠡湖商圈(String), 滨湖区蠡湖(String), 江苏省(String), 无锡(String), 滨湖区(String), 5000.00(BigDecimal), 押一付一(String), 85.00(BigDecimal), 三室一厅(String), 高层/25层(String), 南北(String), ["空调","冰箱","洗衣机","热水器","宽带","电视","衣柜","床"](String), ["https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800","https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800"](String), 3(Integer), 1(Integer), 336(Integer), 57(Integer), 2026-01-11T23:15:03(LocalDateTime), 2026-01-23T15:56:21(LocalDateTime), 391(Long)
+2026-05-18 20:06:41.723 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.house.HouseMapper.updateById - <==    Updates: 1
+2026-05-18 20:06:41.724 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.user.UserMapper.selectById - ==>  Preparing: SELECT user_id,username,password,phone,email,real_name,id_card,avatar,user_type,realname_status,realname_time,realname_audit_reason,status,beans,credit_score,create_time,update_time FROM `user` WHERE user_id=?
+2026-05-18 20:06:41.724 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.user.UserMapper.selectById - ==> Parameters: 72(Long)
+2026-05-18 20:06:41.726 [http-nio-8080-exec-7] DEBUG c.e.demo.repository.user.UserMapper.selectById - <==      Total: 1
+2026-05-18 20:06:41.791 [http-nio-8080-exec-1] DEBUG c.e.demo.repository.house.HouseMapper.selectById - ==>  Preparing: SELECT house_id,landlord_id,title,description,address,province,city,district,longitude,latitude,rent_price,deposit_type,area,house_type,floor,orientation,facilities,images,rent_option,status,audit_reason,view_count,collect_count,property_license_front,property_license_back,property_license_other,create_time,update_time FROM house WHERE house_id=?
+2026-05-18 20:06:41.791 [http-nio-8080-exec-1] DEBUG c.e.demo.repository.house.HouseMapper.selectById - ==> Parameters: 391(Long)
+2026-05-18 20:06:41.791 [http-nio-8080-exec-2] DEBUG c.e.d.repository.house.FavoriteMapper.selectCount - ==>  Preparing: SELECT COUNT( * ) AS total FROM favorite WHERE (user_id = ? AND house_id = ?)
+2026-05-18 20:06:41.791 [http-nio-8080-exec-2] DEBUG c.e.d.repository.house.FavoriteMapper.selectCount - ==> Parameters: 32(Long), 391(Long)
+2026-05-18 20:06:41.792 [http-nio-8080-exec-2] DEBUG c.e.d.repository.house.FavoriteMapper.selectCount - <==      Total: 1
+2026-05-18 20:06:41.792 [http-nio-8080-exec-1] DEBUG c.e.demo.repository.house.HouseMapper.selectById - <==      Total: 1
+2026-05-18 20:06:41.799 [http-nio-8080-exec-1] DEBUG c.e.d.r.c.HouseCommentMapper.selectList_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM house_comment WHERE (house_id = ? AND parent_id IS NULL AND status = ?)
+2026-05-18 20:06:41.800 [http-nio-8080-exec-1] DEBUG c.e.d.r.c.HouseCommentMapper.selectList_mpCount - ==> Parameters: 391(Long), 0(Integer)
+2026-05-18 20:06:41.801 [http-nio-8080-exec-1] DEBUG c.e.d.r.c.HouseCommentMapper.selectList_mpCount - <==      Total: 1
+2026-05-18 20:06:43.244 [http-nio-8080-exec-9] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM house WHERE (status = ? AND city LIKE ?)
+2026-05-18 20:06:43.244 [http-nio-8080-exec-9] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - ==> Parameters: 1(Integer), %无锡%(String)
+2026-05-18 20:06:43.247 [http-nio-8080-exec-9] DEBUG c.e.d.r.house.HouseMapper.selectList_mpCount - <==      Total: 1
+2026-05-18 20:06:43.248 [http-nio-8080-exec-9] DEBUG c.e.demo.repository.house.HouseMapper.selectList - ==>  Preparing: SELECT house_id,landlord_id,title,description,address,province,city,district,longitude,latitude,rent_price,deposit_type,area,house_type,floor,orientation,facilities,images,rent_option,status,audit_reason,view_count,collect_count,property_license_front,property_license_back,property_license_other,create_time,update_time FROM house WHERE (status = ? AND city LIKE ?) ORDER BY view_count DESC,create_time DESC LIMIT ?
+2026-05-18 20:06:43.249 [http-nio-8080-exec-9] DEBUG c.e.demo.repository.house.HouseMapper.selectList - ==> Parameters: 1(Integer), %无锡%(String), 12(Long)
+2026-05-18 20:06:43.258 [http-nio-8080-exec-9] DEBUG c.e.demo.repository.house.HouseMapper.selectList - <==      Total: 12
+2026-05-18 20:07:07.951 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:07:07.951 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:07:07.952 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:07:37.937 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:07:37.937 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:07:37.938 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:07:37.938 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:07:37.939 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:07:37.939 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:08:07.951 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:08:07.951 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:08:07.952 [http-nio-8080-exec-6] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:08:37.939 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:08:37.939 [http-nio-8080-exec-8] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:08:37.939 [http-nio-8080-exec-8] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:08:37.939 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:08:37.939 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:08:37.941 [http-nio-8080-exec-8] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:09:07.948 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:09:07.950 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:09:07.950 [http-nio-8080-exec-1] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:09:37.949 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:09:37.949 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:09:37.949 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:09:37.949 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:09:37.950 [http-nio-8080-exec-10] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:09:37.951 [http-nio-8080-exec-9] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:10:15.941 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:10:15.941 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:10:15.942 [http-nio-8080-exec-3] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:10:37.950 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:10:37.950 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:10:37.951 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:10:37.951 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:10:37.951 [http-nio-8080-exec-5] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:10:37.952 [http-nio-8080-exec-4] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:11:07.946 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:11:07.948 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:11:07.948 [http-nio-8080-exec-7] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:11:37.935 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:11:37.935 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:11:37.938 [http-nio-8080-exec-6] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1
+2026-05-18 20:12:08.936 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==>  Preparing: SELECT COALESCE(SUM(CASE WHEN ? = 1 THEN unread_tenant ELSE unread_landlord END), 0) FROM chat_session WHERE (session_type = 0 OR session_type IS NULL) AND ((? = 1 AND tenant_id = ?) OR (? = 2 AND landlord_id = ?))
+2026-05-18 20:12:08.937 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - ==> Parameters: 1(Integer), 1(Integer), 32(Long), 1(Integer), 32(Long)
+2026-05-18 20:12:08.938 [http-nio-8080-exec-2] DEBUG c.e.d.r.chat.ChatSessionMapper.countTotalUnread - <==      Total: 1
+2026-05-18 20:12:37.942 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==>  Preparing: SELECT COUNT(*) FROM notification WHERE user_id = ? AND is_read = 0
+2026-05-18 20:12:37.942 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - ==> Parameters: 32(Long)
+2026-05-18 20:12:37.945 [http-nio-8080-exec-1] DEBUG c.e.d.r.n.NotificationMapper.countUnreadByUserId - <==      Total: 1

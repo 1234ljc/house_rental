@@ -1,0 +1,74 @@
+# ============================================
+# 房屋租赁系统 - Spring Boot 配置
+# ============================================
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: house-rental
+
+  # 数据源配置（请根据实际情况修改）
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/house_rental?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+  # Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+
+  # 文件上传大小限制
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+# ============================================
+# 日志配置
+# ============================================
+logging:
+  # 日志输出格式
+  pattern:
+    # 控制台格式：时间 [线程] 级别 类名 - 消息
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+    # 文件格式：包含更详细的行号信息
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+  # 日志文件配置
+  file:
+    # 日志文件路径（相对于项目运行目录）
+    name: logs/house-rental.log
+    # 或者使用 path 指定目录
+    # path: /var/log/house-rental
+  # 日志级别配置
+  level:
+    # 全局默认级别
+    root: INFO
+    # 本项目使用 DEBUG（开发时可看到详细日志）
+    com.example.demo: DEBUG
+    # MyBatis SQL 日志（方便调试）
+    com.example.demo.repository: DEBUG
+    # Spring 框架用 WARN（减少噪音）
+    org.springframework: WARN
+    # Druid 连接池用 INFO
+    com.alibaba.druid: INFO
+
+# ============================================
+# 其他业务配置
+# ============================================
+
+# JWT配置
+jwt:
+  secret: your-secret-key-change-in-production
+  expiration: 86400000  # 24小时
+
+# AI服务配置
+ai:
+  api-key: your-api-key
+  base-url: https://attachment.cdn/img/5dd39fbeb802.png

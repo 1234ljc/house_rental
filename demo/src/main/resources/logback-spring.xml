@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Logback 配置文件
+    官方文档: https://logback.qos.ch/manual/configuration.html
+    
+    Spring Boot 专用命名: logback-spring.xml
+    优点: 支持 <springProfile> 标签，可以根据环境切换配置
+-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <!-- ============================================
+         定义变量
+         ============================================ -->
+    <property name="LOG_PATH" value="logs"/>
+    <property name="APP_NAME" value="house-rental"/>
+    
+    <!-- 日志格式 -->
+    <!-- 控制台格式 -->
+    <property name="CONSOLE_LOG_PATTERN" 
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <!-- 文件格式（更详细） -->
+    <property name="FILE_LOG_PATTERN" 
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+
+    <!-- ============================================
+         Console Appender（控制台输出）
+         ============================================ -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ============================================
+         File Appender（文件输出 - 所有日志）
+         ============================================ -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 日志文件路径 -->
+        <file>${LOG_PATH}/${APP_NAME}.log</file>
+        
+        <!-- 滚动策略：按时间 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 归档文件名格式: app.2026-05-16.log -->
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- 保留30天 -->
+            <maxHistory>30</maxHistory>
+            <!-- 总大小上限 3GB -->
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ============================================
+         Error File Appender（只记录 ERROR 级别）
+         ============================================ -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${APP_NAME}-error.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ============================================
+         业务日志单独文件（可选，方便追踪业务问题）
+         ============================================ -->
+    <appender name="BUSINESS_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${APP_NAME}-business.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}-business.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- ============================================
+         Logger 配置
+         ============================================ -->
+    
+    <!-- 本项目业务代码：DEBUG 级别 -->
+    <logger name="com.example.demo" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
+    </logger>
+    
+    <!-- MyBatis SQL 日志 -->
+    <logger name="com.example.demo.repository" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+    
+    <!-- 定时任务单独记录 -->
+    <logger name="com.example.demo.service.rental.scheduler" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="BUSINESS_FILE"/>
+    </logger>
+    
+    <!-- Spring 框架：WARN 级别（减少噪音） -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.springframework.web" level="WARN"/>
+    
+    <!-- Hibernate: WARN -->
+    <logger name="org.hibernate" level="WARN"/>
+    
+    <!-- Druid 连接池: INFO -->
+    <logger name="com.alibaba.druid" level="INFO"/>
+    
+    <!-- Tomcat: WARN -->
+    <logger name="org.apache.tomcat" level="WARN"/>
+    
+    <!-- Netty: WARN -->
+    <logger name="io.netty" level="WARN"/>
+
+    <!-- ============================================
+         Root Logger（根日志器）
+         ============================================ -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
+    </root>
+
+    <!-- ============================================
+         环境配置（开发/生产环境切换）
+         ============================================ -->
+    
+    <!-- 开发环境 -->
+    <springProfile name="dev">
+        <logger name="com.example.demo" level="DEBUG"/>
+        <logger name="org.springframework" level="INFO"/>
+    </springProfile>
+    
+    <!-- 生产环境 -->
+    <springProfile name="prod">
+        <logger name="com.example.demo" level="INFO"/>
+        <logger name="org.springframework" level="WARN"/>
+        <!-- 生产环境关闭控制台日志，减少磁盘IO -->
+    </springProfile>
+
+</configuration>

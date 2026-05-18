@@ -1,0 +1,7 @@
+# AI 配置
+ai:
+  provider: qwen
+  api:
+    key: ${AI_API_KEY:sk-c5a766fafc1240cca6f6d2e9f20434d0}
+    url: ${AI_API_URL:https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation}
+  model: ${AI_MODEL:qwen-turbo}
